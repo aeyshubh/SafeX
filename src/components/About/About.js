@@ -10,7 +10,7 @@ const About = () => {
   return (
     <div className="about-container">
       <img src={bg2} alt="" className="bg2" />
-      {/* <div className="members">
+      <div className="members">
         <img src={sid} alt="" />
         <div style={{color: "#5E17EB", fontSize: "1.5rem", fontWeight:"600", textTransform:"uppercase", marginTop: "-20px"}}>Sidhdharth Shukla</div>
         <SocialMedia
@@ -19,7 +19,7 @@ const About = () => {
           linkedin="https://www.linkedin.com/in/siddharth-shukla-9b4448205/"
           twitter="https://twitter.com/Sid26735"
         />
-      </div> */}
+      </div>
       <div className="members">
         <img src={shub} alt="" />
         <div style={{color: "#5E17EB", fontSize: "1.5rem", textTransform:"uppercase", marginTop: "-20px"}}>Shubham Patel</div>
