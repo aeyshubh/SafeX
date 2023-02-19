@@ -2,15 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/logo-sn2.png" />
+    <link rel="icon" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <!-- or -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <script src="
+    https://cdn.jsdelivr.net/npm/antd@5.1.7/dist/antd.min.js
+    "></script>
+    <link
+      href="
+    https://cdn.jsdelivr.net/npm/antd@5.1.7/dist/reset.min.css
+    "
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/yourcode.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -26,46 +53,15 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Stalk nfts</title>
+    <title>Super learn</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    --><script>
-         $(".search-btn").click(function(){
-          console.log("hi");
-           $(".wrapper2").addClass("active");
-           $(this).css("display", "none");
-           $(".search-data").fadeIn(500);
-           $(".close-btn").fadeIn(500);
-           $(".search-data .line").addClass("active");
-           setTimeout(function(){
-             $("input").focus();
-             $(".search-data label").fadeIn(500);
-             $(".search-data span").fadeIn(500);
-           }, 800);
-         });
-         $(".close-btn").click(function(){
-           $(".wrapper2").removeClass("active");
-           $(".search-btn").fadeIn(800);
-           $(".search-data").fadeOut(500);
-           $(".close-btn").fadeOut(500);
-           $(".search-data .line").removeClass("active");
-           $("input").val("");
-           $(".search-data label").fadeOut(500);
-           $(".search-data span").fadeOut(500);
-         });
-      </script>
   </body>
 </html>

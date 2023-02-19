@@ -1,13 +1,12 @@
 .header {
     width: 100vw;
-    position: fixed;
-    top: 0px;
     height: 90px;
-    z-index: 11;
     display: flex;
     justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(20px);
+    padding: 0 20px;
+    margin-top: -20px;
 }
 
 .header .img-search {
@@ -15,45 +14,29 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    width: 60%;
+    width: 200px;
 }
 
-.header img {
-    position: relative;
-    height: auto;
-    width: 300px;
+.header .img-search img {
+    width: 100%;
+    height: 100%;
 }
 
 .header ul {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
-    margin-left: 100px;
+    margin-top: 14px;
     align-items: center;
 }
 
 ul li p {
-    font-size: 1.2rem;
-    color: #1b1b1b;
-    margin: 0 10px 0 10px;
-    padding: 7px 20px;
-    font-weight: 500;
-    transition: .3s;
-    width: 150px;
+    font-size: 18px;
+    color: #373737;
+    margin: 0 5px 0 5px;
+    width: 100px;
     text-align: center;
-    border-top: 3px solid transparent;
-    border-right: 3px solid transparent;
-    border-left: 3px solid transparent;
-    border-bottom: 3px solid #5E17EB; 
 }
-
-ul li p:hover {
-    border-radius: 100px;
-    background-color: #5E17EB;
-    border: 3px solid #5E17EB;
-    color: #fff;
-} 
 
 
 @media screen and (max-width:1124px) and (min-width:769px) {
@@ -247,4 +230,21 @@ ul li p:hover {
 .metamask:hover {
     border: none;
     background-color: transparent;
+}
+
+.wallet_connect button {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    border-radius: 10px;
+    color: white;
+    margin-top: 20px;
+    box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.25);
+    transition: .3s .1s;
+}
+
+.wallet_connect button:hover {
+    box-shadow: none;
 }
