@@ -17,7 +17,7 @@ const VidList = ({data}) => {
   const [vid, setVids] = useState()
   const [fields, setFields] = useState()
   const [stuC, setStuC] = useState()
-
+  const [status,setStatus] = useState(false);
     const contractAddress = "0x9DeFFaCA204161715EA3F2Af755f5632f80A7255";
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const contractInstance = new ethers.Contract(contractAddress, abi, provider.getSigner());
@@ -92,12 +92,12 @@ const VidList = ({data}) => {
             });
 
             await contractInstance
-            .courseTakenByStudent(address, data._id)
+            .setCourseTakenByStudent(data._id)
             .then((res) => {
               console.log("course has been taken", res);
             })
       
-        } catch (error) {
+       }  catch (error) {
           console.log(
             "Hmmm, your transaction threw an error. Make sure that this stream does not already exist, and that you've entered a valid Ethereum address!"
           );
@@ -105,6 +105,50 @@ const VidList = ({data}) => {
         }
     }
 
+    async function deleteExistingFlow(recipient) {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      await provider.send("eth_requestAccounts", []);
+    
+      const signer = provider.getSigner();
+    
+      const chainId = await window.ethereum.request({ method: "eth_chainId" });
+      const sf = await Framework.create({
+        chainId: Number(chainId),
+        provider: provider
+      });
+    
+      const superSigner = sf.createSigner({ signer: signer });
+    
+      console.log(signer);
+      console.log(await superSigner.getAddress());
+      const daix = await sf.loadSuperToken("fDAIx");
+    
+      console.log(daix);
+    
+      try {
+        const deleteFlowOperation = daix.deleteFlow({
+          sender: await signer.getAddress(),
+          receiver: recipient
+          // userData?: string
+        });
+    
+        console.log(deleteFlowOperation);
+        console.log("Deleting your stream...");
+    
+        const result = await deleteFlowOperation.exec(superSigner);
+        console.log(result);
+    
+        console.log(
+          `Congrats - you've just updated a money stream!
+        `
+        );
+      } catch (error) {
+        console.log(
+          "Hmmm, your transaction threw an error. Make sure that this stream does not already exist, and that you've entered a valid Ethereum address!"
+        );
+        console.error(error);
+      }
+    }
     const render = async  () => {
         try {
           console.log(data);
@@ -167,9 +211,10 @@ const VidList = ({data}) => {
                     </div>
                   </div>
                   <div className='price_btn'>
-                      <button onClick={() => executeBatchCall(5, data.walletAddress, 5000000000000)}>$5 / 5 days</button>
-                      <button onClick={() => executeBatchCall(10, data.walletAddress, 1000000000000000)}>$10 / 15 days</button>     
-                      <button onClick={() => executeBatchCall(25, data.walletAddress, 1500000000000000)}>$25 / 30 days</button>   
+                      <button onClick={() => executeBatchCall(5, data.walletAddress, 11600000000000)}>$5 / 5 days</button>
+                      <button onClick={() => executeBatchCall(10, data.walletAddress, 7720000000000)}>$10 / 15 days</button>     
+                      <button onClick={() => executeBatchCall(25, data.walletAddress, 1930000000000)}>$25 / 30 days</button>
+                      <button onClick={() => deleteExistingFlow(data.walletAddress)}>End Course Stream</button>   
                   </div>
                 </div>
                 <h1 style={{"width":"100%", "fontSize":"20px","padding":"10px","marginTop":"20px","color":"black"}}>Included Videos</h1>
