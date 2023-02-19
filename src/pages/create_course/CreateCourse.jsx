@@ -12,6 +12,7 @@ import abi from '../../abi.json'
 import { Select } from 'antd';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import * as PushAPI from "@pushprotocol/restapi";
 
 const contractAddress = "0x9DeFFaCA204161715EA3F2Af755f5632f80A7255";
 
@@ -119,12 +120,30 @@ const CreateCourse = () => {
 
         let date = Date.now();
         await contractInstance
-        .setCourseCreator(Number(counter), asset[0].playbackId, 'null', date)
+        .setCourseCreator(Number(counter), asset[0].playbackId, cName, date)
         .then((res) => {
           toast.dismiss(1);
           toast.success(`Course created successfully`, {
             position: toast.POSITION.TOP_RIGHT
           });
+      
+            PushAPI.payloads.sendNotification({
+              signer,
+              type: 1, // broadcast
+              identityType: 2, // direct payload
+              notification: {
+                title:cName, //Notification pops just for some time
+                body:desc, //Nptification pops for
+              },
+              payload: {
+                title:cName, //Notification pops just for some time
+                body:desc, // Main Test shown on the page
+                cta: "",
+                img: "",
+              },
+              channel: `eip155:5:${address}`,
+              env: "staging",
+            });
           
           navigate('/dashboard')
         })
