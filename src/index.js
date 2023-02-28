@@ -6,17 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter as Router
 } from 'react-router-dom';
-import { AuthProvider } from './context/Auth';
+import SafeProvider from '@gnosis.pm/safe-apps-react-sdk'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(
+root.render( 
   <React.StrictMode>
-      <Router>
-        <AuthProvider>
-            <App />
-        </AuthProvider>
-      </Router>
+    <SafeProvider>
+      <Router> 
+        <App />
+      </Router> 
+    </SafeProvider>
   </React.StrictMode>
 );
 
