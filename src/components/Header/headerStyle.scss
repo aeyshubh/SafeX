@@ -320,9 +320,15 @@ html {
           width: 52px;
           transition-delay: .05s;
         }
+        &:nth-of-type(5) {
+          bottom: -30px;
+          left: -65px;
+          width: 52px;
+          transition-delay: .05s;
+        }
         &:last-of-type {
-          bottom: -70px;
-          right: 0px;
+          bottom: -90px;
+          right: -90px;
           width: 200px;
           background-color: transparent;
           box-shadow: none;

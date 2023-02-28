@@ -33,6 +33,7 @@ const Header = () => {
         <div class="button" title="buy caseflow nfts"><Link to="/buy-cashflow-nfts"><i class='bx bx-add-to-queue icons' ></i></Link></div>
         <div class="button" title="your nfts"><Link to="/profile"><i class='bx bx-user-pin icons'></i></Link></div>
         <div class="button" title="sell caseflow nfts"><Link to="/sell-cashflow-nfts"><i class='bx bx-outline icons' ></i></Link></div>
+        <div class="button" title="sell caseflow nfts"><a href="">safe</a></div>
         <div class="button"><ConnectButton accountStatus="avatar" chainStatus="none" showBalance={false} /></div>
       </div>
     </div>

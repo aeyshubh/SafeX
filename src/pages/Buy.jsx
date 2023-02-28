@@ -4,10 +4,7 @@ import { Contract, ethers } from 'ethers';
 import { useEffect } from 'react';
 
 const Buy = () => {
-
-    const [salary,setSalary] = useState('');
-    const [duration,setDuration] = useState('');
-    const [price,setPrice] = useState('');
+  
     const [allData,setData] = useState('');
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
