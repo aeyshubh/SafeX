@@ -12,7 +12,7 @@ const Sell = () => {
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
-    const contractAddress = '0x8EEA079079EF04331e0AA0a93a4D3aDfFe9E10cF';
+    const contractAddress = '0x9754c9969705b3d60e7890416F515c2EDef8B1c0';
     const contractABI = abi;
     // const contractRead = new Contract(
     //     contractAddress,

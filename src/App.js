@@ -26,7 +26,7 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 
 const { chains, provider } = configureChains(
-  [goerli, gnosis],
+  [goerli],
   [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
 );
 

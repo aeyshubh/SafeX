@@ -9,7 +9,7 @@ const Buy = () => {
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
-    const contractAddress = '0x8EEA079079EF04331e0AA0a93a4D3aDfFe9E10cF';
+    const contractAddress = '0x9754c9969705b3d60e7890416F515c2EDef8B1c0';
     const contractABI = abi;
     const contractRead = new Contract(
         contractAddress,
@@ -25,7 +25,7 @@ const Buy = () => {
           const j = await contractRead.salaryMapping(i)
           // console.log(j);
           console.log(Number(j.duration));
-          arr.push({index: i,price: ethers.utils.formatEther(Number(j.price)), duration:Number(j.duration), seller: j.seller, salaryAmount: Number(j.salaryAmount), boughtBy: j.buyer})
+          arr.push({index: i,price: ethers.utils.formatEther(String(j.price)), duration:Number(j.duration), seller: j.seller, salaryAmount: Number(j.salaryAmount), boughtBy: j.buyer})
         }
         setData(arr)
     }
